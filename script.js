@@ -6,8 +6,9 @@ function createGrid(number) {
         for (j = 0; j < number; j++){
             div = document.createElement('div');
             div.className = "grid";
-            div.style.width=`60px`;
-            div.style.height=`60px`;
+            n = 960/number;
+            div.style.width = `${n}px`;
+            div.style.height = `${n}px`;
             container.appendChild(div);
         };
     };
@@ -23,5 +24,11 @@ function clearGrid() {
         var grid = grids[0];
         grid.parentNode.removeChild(grid);
     };
+};
+
+function refreshGrid () {
+    let z = prompt(`How many boxes per side?`);
+    clearGrid();
+    createGrid(z);
 };
 
