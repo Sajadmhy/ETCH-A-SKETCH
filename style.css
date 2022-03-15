@@ -11,3 +11,25 @@ button{
     color: white;
     flex: 1;
 }
+
+#container {
+    position: relative;
+    top: 30px;
+    outline: 2px solid #000;
+    font-size: 0;
+    margin: auto;
+    height: 480px;
+    width: 480px;
+    padding: 0;
+    border: none;
+}
+
+.grid {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    outline: 1px solid #000;
+    display: inline-block;
+    /* width: 30px;
+    height: 30px; */
+}
