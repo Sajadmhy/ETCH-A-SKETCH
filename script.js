@@ -19,24 +19,34 @@ createGrid(16);
 
 grids = document.getElementsByClassName("grid");
 
+// clearGrid sets all the div's colors to white
 function clearGrid() {
+   
+    for (let k = 0; k < grids.length; k++){
+            grids[k].style.backgroundColor = "white";
+        }};
+
+// trail set's any cell's color to black on mouse hover
+function trail () {
+for (let k = 0; k < grids.length; k++){
+    grids[k].addEventListener("mouseover", function() {
+        grids[k].style.backgroundColor = "black";
+    })}};
+    
+trail();
+
+//refreshGrid asks for number of cells, clears the grid
+// and creates new grid and activates the trail function
+function refreshGrid () {
+    let z = prompt(`How many boxes per side?`);
     while (grids.length > 0) {
         var grid = grids[0];
         grid.parentNode.removeChild(grid);
     };
-};
-
-function refreshGrid () {
-    let z = prompt(`How many boxes per side?`);
-    clearGrid();
     createGrid(z);
+    trail();
 };
 
-for (let i = 0; i < grids.length; i++){
-grids[i].addEventListener("mouseover", function() {
-    grids[i].style.backgroundColor = "black";
-})};
+document.getElementById("set-grid").addEventListener("click", refreshGrid);
+document.getElementById("clear").addEventListener("click", clearGrid);
     
-// document.getElementById("myID").addEventListener("mouseout", function() {
-//     document.getElementById("myID").style.backgroundColor = "red";
-// });
