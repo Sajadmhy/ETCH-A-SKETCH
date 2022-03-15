@@ -32,3 +32,11 @@ function refreshGrid () {
     createGrid(z);
 };
 
+for (let i = 0; i < grids.length; i++){
+grids[i].addEventListener("mouseover", function() {
+    grids[i].style.backgroundColor = "black";
+})};
+    
+// document.getElementById("myID").addEventListener("mouseout", function() {
+//     document.getElementById("myID").style.backgroundColor = "red";
+// });
